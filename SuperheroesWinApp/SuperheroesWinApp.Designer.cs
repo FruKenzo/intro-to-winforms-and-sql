@@ -44,20 +44,27 @@
             this.AdminSuperheroesButton = new System.Windows.Forms.Button();
             this.AdminDataGrid = new System.Windows.Forms.DataGridView();
             this.AdminCreateHeroButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.AdminSearchButton = new System.Windows.Forms.Button();
+            this.AdminUpdateButton = new System.Windows.Forms.Button();
+            this.AdminDeleteButton = new System.Windows.Forms.Button();
             this.AdminCRUDButtons = new System.Windows.Forms.Panel();
             this.HeroLogOutButton = new System.Windows.Forms.Button();
             this.AdminlogOutButton = new System.Windows.Forms.Button();
             this.AdminNav = new System.Windows.Forms.Panel();
             this.HeroNav = new System.Windows.Forms.GroupBox();
+            this.HeroProfileLabel = new System.Windows.Forms.Label();
+            this.HeroProblemsLabel = new System.Windows.Forms.Label();
+            this.HeroHeroicActsLabel = new System.Windows.Forms.Label();
+            this.AdminSuperheroesLabel = new System.Windows.Forms.Label();
+            this.AdminProblemsLabel = new System.Windows.Forms.Label();
+            this.LabelPanel = new System.Windows.Forms.Panel();
             this.loginGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HeroDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdminDataGrid)).BeginInit();
             this.AdminCRUDButtons.SuspendLayout();
             this.AdminNav.SuspendLayout();
             this.HeroNav.SuspendLayout();
+            this.LabelPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // usernameTextbox
@@ -145,9 +152,9 @@
             // HeroDataGrid
             // 
             this.HeroDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.HeroDataGrid.Location = new System.Drawing.Point(12, 118);
+            this.HeroDataGrid.Location = new System.Drawing.Point(12, 148);
             this.HeroDataGrid.Name = "HeroDataGrid";
-            this.HeroDataGrid.Size = new System.Drawing.Size(762, 322);
+            this.HeroDataGrid.Size = new System.Drawing.Size(762, 292);
             this.HeroDataGrid.TabIndex = 10;
             this.HeroDataGrid.Visible = false;
             // 
@@ -169,6 +176,7 @@
             this.HeroHeroicActsButton.TabIndex = 12;
             this.HeroHeroicActsButton.Text = "Heroic Acts";
             this.HeroHeroicActsButton.UseVisualStyleBackColor = true;
+            this.HeroHeroicActsButton.Click += new System.EventHandler(this.HeroHeroicActsButton_Click);
             // 
             // HeroProblemsButton
             // 
@@ -178,6 +186,7 @@
             this.HeroProblemsButton.TabIndex = 13;
             this.HeroProblemsButton.Text = "Problems";
             this.HeroProblemsButton.UseVisualStyleBackColor = true;
+            this.HeroProblemsButton.Click += new System.EventHandler(this.HeroProblemsButton_Click);
             // 
             // HeroProfileButton
             // 
@@ -187,6 +196,7 @@
             this.HeroProfileButton.TabIndex = 14;
             this.HeroProfileButton.Text = "Profile";
             this.HeroProfileButton.UseVisualStyleBackColor = true;
+            this.HeroProfileButton.Click += new System.EventHandler(this.HeroProfileButton_Click);
             // 
             // AdminProblemsButton
             // 
@@ -225,40 +235,44 @@
             this.AdminCreateHeroButton.TabIndex = 19;
             this.AdminCreateHeroButton.Text = "Create";
             this.AdminCreateHeroButton.UseVisualStyleBackColor = true;
+            this.AdminCreateHeroButton.Click += new System.EventHandler(this.AdminCreateHeroButton_Click);
             // 
-            // button1
+            // AdminSearchButton
             // 
-            this.button1.Location = new System.Drawing.Point(108, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AdminSearchButton.Location = new System.Drawing.Point(108, 3);
+            this.AdminSearchButton.Name = "AdminSearchButton";
+            this.AdminSearchButton.Size = new System.Drawing.Size(100, 30);
+            this.AdminSearchButton.TabIndex = 21;
+            this.AdminSearchButton.Text = "Search";
+            this.AdminSearchButton.UseVisualStyleBackColor = true;
+            this.AdminSearchButton.Click += new System.EventHandler(this.AdminSearchButton_Click);
             // 
-            // button2
+            // AdminUpdateButton
             // 
-            this.button2.Location = new System.Drawing.Point(214, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 30);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AdminUpdateButton.Location = new System.Drawing.Point(214, 3);
+            this.AdminUpdateButton.Name = "AdminUpdateButton";
+            this.AdminUpdateButton.Size = new System.Drawing.Size(100, 30);
+            this.AdminUpdateButton.TabIndex = 23;
+            this.AdminUpdateButton.Text = "Update";
+            this.AdminUpdateButton.UseVisualStyleBackColor = true;
+            this.AdminUpdateButton.Click += new System.EventHandler(this.AdminUpdateButton_Click);
             // 
-            // button3
+            // AdminDeleteButton
             // 
-            this.button3.Location = new System.Drawing.Point(320, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 30);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AdminDeleteButton.Location = new System.Drawing.Point(320, 3);
+            this.AdminDeleteButton.Name = "AdminDeleteButton";
+            this.AdminDeleteButton.Size = new System.Drawing.Size(100, 30);
+            this.AdminDeleteButton.TabIndex = 25;
+            this.AdminDeleteButton.Text = "Delete";
+            this.AdminDeleteButton.UseVisualStyleBackColor = true;
+            this.AdminDeleteButton.Click += new System.EventHandler(this.AdminDeleteButton_Click);
             // 
             // AdminCRUDButtons
             // 
             this.AdminCRUDButtons.Controls.Add(this.AdminCreateHeroButton);
-            this.AdminCRUDButtons.Controls.Add(this.button3);
-            this.AdminCRUDButtons.Controls.Add(this.button2);
-            this.AdminCRUDButtons.Controls.Add(this.button1);
+            this.AdminCRUDButtons.Controls.Add(this.AdminDeleteButton);
+            this.AdminCRUDButtons.Controls.Add(this.AdminUpdateButton);
+            this.AdminCRUDButtons.Controls.Add(this.AdminSearchButton);
             this.AdminCRUDButtons.Location = new System.Drawing.Point(12, 109);
             this.AdminCRUDButtons.Name = "AdminCRUDButtons";
             this.AdminCRUDButtons.Size = new System.Drawing.Size(419, 35);
@@ -273,6 +287,7 @@
             this.HeroLogOutButton.TabIndex = 28;
             this.HeroLogOutButton.Text = "Log out";
             this.HeroLogOutButton.UseVisualStyleBackColor = true;
+            this.HeroLogOutButton.Click += new System.EventHandler(this.HeroLogOutButton_Click);
             // 
             // AdminlogOutButton
             // 
@@ -282,6 +297,7 @@
             this.AdminlogOutButton.TabIndex = 28;
             this.AdminlogOutButton.Text = "Log out";
             this.AdminlogOutButton.UseVisualStyleBackColor = true;
+            this.AdminlogOutButton.Click += new System.EventHandler(this.AdminlogOutButton_Click);
             // 
             // AdminNav
             // 
@@ -311,9 +327,77 @@
             this.HeroNav.TabStop = false;
             this.HeroNav.Visible = false;
             // 
+            // HeroProfileLabel
+            // 
+            this.HeroProfileLabel.AutoSize = true;
+            this.HeroProfileLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeroProfileLabel.Location = new System.Drawing.Point(59, 9);
+            this.HeroProfileLabel.Name = "HeroProfileLabel";
+            this.HeroProfileLabel.Size = new System.Drawing.Size(62, 24);
+            this.HeroProfileLabel.TabIndex = 29;
+            this.HeroProfileLabel.Text = "Profile";
+            this.HeroProfileLabel.Visible = false;
+            // 
+            // HeroProblemsLabel
+            // 
+            this.HeroProblemsLabel.AutoSize = true;
+            this.HeroProblemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeroProblemsLabel.Location = new System.Drawing.Point(45, 9);
+            this.HeroProblemsLabel.Name = "HeroProblemsLabel";
+            this.HeroProblemsLabel.Size = new System.Drawing.Size(90, 24);
+            this.HeroProblemsLabel.TabIndex = 30;
+            this.HeroProblemsLabel.Text = "Problems";
+            this.HeroProblemsLabel.Visible = false;
+            // 
+            // HeroHeroicActsLabel
+            // 
+            this.HeroHeroicActsLabel.AutoSize = true;
+            this.HeroHeroicActsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeroHeroicActsLabel.Location = new System.Drawing.Point(36, 9);
+            this.HeroHeroicActsLabel.Name = "HeroHeroicActsLabel";
+            this.HeroHeroicActsLabel.Size = new System.Drawing.Size(104, 24);
+            this.HeroHeroicActsLabel.TabIndex = 31;
+            this.HeroHeroicActsLabel.Text = "Heroic acts";
+            this.HeroHeroicActsLabel.Visible = false;
+            // 
+            // AdminSuperheroesLabel
+            // 
+            this.AdminSuperheroesLabel.AutoSize = true;
+            this.AdminSuperheroesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminSuperheroesLabel.Location = new System.Drawing.Point(20, 9);
+            this.AdminSuperheroesLabel.Name = "AdminSuperheroesLabel";
+            this.AdminSuperheroesLabel.Size = new System.Drawing.Size(120, 24);
+            this.AdminSuperheroesLabel.TabIndex = 32;
+            this.AdminSuperheroesLabel.Text = "Superheroes";
+            this.AdminSuperheroesLabel.Visible = false;
+            // 
+            // AdminProblemsLabel
+            // 
+            this.AdminProblemsLabel.AutoSize = true;
+            this.AdminProblemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminProblemsLabel.Location = new System.Drawing.Point(45, 9);
+            this.AdminProblemsLabel.Name = "AdminProblemsLabel";
+            this.AdminProblemsLabel.Size = new System.Drawing.Size(90, 24);
+            this.AdminProblemsLabel.TabIndex = 33;
+            this.AdminProblemsLabel.Text = "Problems";
+            this.AdminProblemsLabel.Visible = false;
+            // 
+            // LabelPanel
+            // 
+            this.LabelPanel.Controls.Add(this.AdminProblemsLabel);
+            this.LabelPanel.Controls.Add(this.HeroProfileLabel);
+            this.LabelPanel.Controls.Add(this.HeroProblemsLabel);
+            this.LabelPanel.Controls.Add(this.HeroHeroicActsLabel);
+            this.LabelPanel.Controls.Add(this.AdminSuperheroesLabel);
+            this.LabelPanel.Location = new System.Drawing.Point(627, 107);
+            this.LabelPanel.Name = "LabelPanel";
+            this.LabelPanel.Size = new System.Drawing.Size(147, 35);
+            this.LabelPanel.TabIndex = 34;
+            // 
             // SuperheroesWinApp
             // 
             this.ClientSize = new System.Drawing.Size(786, 452);
+            this.Controls.Add(this.LabelPanel);
             this.Controls.Add(this.AdminCRUDButtons);
             this.Controls.Add(this.loginGroupBox);
             this.Controls.Add(this.AdminDataGrid);
@@ -331,6 +415,8 @@
             this.AdminNav.ResumeLayout(false);
             this.HeroNav.ResumeLayout(false);
             this.HeroNav.PerformLayout();
+            this.LabelPanel.ResumeLayout(false);
+            this.LabelPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -352,14 +438,20 @@
         private System.Windows.Forms.Button AdminSuperheroesButton;
         private System.Windows.Forms.DataGridView AdminDataGrid;
         private System.Windows.Forms.Button AdminCreateHeroButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button AdminSearchButton;
+        private System.Windows.Forms.Button AdminUpdateButton;
+        private System.Windows.Forms.Button AdminDeleteButton;
         private System.Windows.Forms.Panel AdminCRUDButtons;
         private System.Windows.Forms.Button HeroLogOutButton;
         private System.Windows.Forms.Button AdminlogOutButton;
         private System.Windows.Forms.Panel AdminNav;
         private System.Windows.Forms.GroupBox HeroNav;
+        private System.Windows.Forms.Label HeroProfileLabel;
+        private System.Windows.Forms.Label HeroProblemsLabel;
+        private System.Windows.Forms.Label HeroHeroicActsLabel;
+        private System.Windows.Forms.Label AdminSuperheroesLabel;
+        private System.Windows.Forms.Label AdminProblemsLabel;
+        private System.Windows.Forms.Panel LabelPanel;
     }
 }
 
